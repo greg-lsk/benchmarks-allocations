@@ -1,4 +1,4 @@
-namespace PredicatePointer;
+namespace PredicatePointerBenchmark;
 
 
 public unsafe readonly struct PredicatePointer<T>(delegate*<in T, bool> predicate) where T : struct
