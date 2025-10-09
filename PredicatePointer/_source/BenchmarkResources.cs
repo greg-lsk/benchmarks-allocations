@@ -1,4 +1,4 @@
-namespace PredicatePointerBenchmark;
+namespace PredicatePointer;
 
 
 public enum EvaluationRule
