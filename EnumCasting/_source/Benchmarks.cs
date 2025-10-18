@@ -8,10 +8,10 @@ namespace EnumCasting;
 public class Benchmarks
 {
     [Benchmark]
-    public void ToIntCast() => IntCast();
+    public int ToIntCast() => (int)Color.Blue;
 
     [Benchmark]
-    public void ToColorCast() => EnumCast();
+    public Color ToColorCast() => (Color)0;
 
 
     private static int IntCast() => (int)Color.Blue;
