@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>EnumCasting.Benchmarks-20251019-000346</title>
+<title>EnumCasting.Benchmarks-20251019-001028</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -22,14 +22,14 @@ Intel Core2 Quad CPU Q9300 2.50GHz, 1 CPU, 4 logical and 4 physical cores
 <pre><code></code></pre>
 
 <table>
-<thead><tr><th>Method                 </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Gen0</th><th>Allocated</th>
+<thead><tr><th>Method                 </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>ToIntCast</td><td>12.90 &mu;s</td><td>0.004 &mu;s</td><td>0.004 &mu;s</td><td>-</td><td>-</td>
-</tr><tr><td>ToIntCastGeneric</td><td>12.90 &mu;s</td><td>0.001 &mu;s</td><td>0.001 &mu;s</td><td>-</td><td>-</td>
-</tr><tr><td>ToIntCastGenericNoConstrains</td><td>12.90 &mu;s</td><td>0.002 &mu;s</td><td>0.001 &mu;s</td><td>-</td><td>-</td>
-</tr><tr><td>ToEnumCast</td><td>46.58 &mu;s</td><td>0.013 &mu;s</td><td>0.011 &mu;s</td><td>-</td><td>-</td>
-</tr><tr><td>ToEnumCastGeneric</td><td>322.86 &mu;s</td><td>1.266 &mu;s</td><td>1.057 &mu;s</td><td>611.8164</td><td>960000 B</td>
-</tr><tr><td>ToEnumCastGenericNoConstrains</td><td>46.58 &mu;s</td><td>0.007 &mu;s</td><td>0.006 &mu;s</td><td>-</td><td>-</td>
+</thead><tbody><tr><td>ToIntCast</td><td>12.90 &mu;s</td><td>0.001 &mu;s</td><td>0.001 &mu;s</td><td>-</td>
+</tr><tr><td>ToIntCastGeneric</td><td>12.90 &mu;s</td><td>0.007 &mu;s</td><td>0.006 &mu;s</td><td>-</td>
+</tr><tr><td>ToIntCastGenericNoConstrains</td><td>12.90 &mu;s</td><td>0.001 &mu;s</td><td>0.001 &mu;s</td><td>-</td>
+</tr><tr><td>ToEnumCast</td><td>46.64 &mu;s</td><td>0.085 &mu;s</td><td>0.079 &mu;s</td><td>-</td>
+</tr><tr><td>ToEnumCastGeneric</td><td>46.58 &mu;s</td><td>0.021 &mu;s</td><td>0.020 &mu;s</td><td>-</td>
+</tr><tr><td>ToEnumCastGenericNoConstrains</td><td>46.57 &mu;s</td><td>0.015 &mu;s</td><td>0.014 &mu;s</td><td>-</td>
 </tr></tbody></table>
 </body>
 </html>
