@@ -38,15 +38,6 @@ public class Benchmarks
     }
 
     [Benchmark]
-    public int ToIntCastGenericNoConstrains()
-    {
-        var total = 0;
-        for (int i = 0; i < _iterations; ++i) total += ToIntCastGenericNoConstrains(_color);
-
-        return total;
-    }
-
-    [Benchmark]
     public Color ToEnumCast()
     {
         var color = Color.White;
@@ -65,18 +56,6 @@ public class Benchmarks
         return color;
     }
 
-    [Benchmark]
-    public Color ToEnumCastGenericNoConstrains()
-    {
-        var color = Color.White;
-        for (int i = 0; i < _iterations; ++i) color = ToEnumCastGenericNoConstrains<Color>(i % 2);
-
-        return color;
-    }
-
     private static int ToIntCastGeneric<TEnum>(TEnum e) where TEnum : struct, Enum => (int)(object)e;
-    private static int ToIntCastGenericNoConstrains<TEnum>(TEnum e) => (int)(object)e!;
-
     private static TEnum ToEnumCastGeneric<TEnum>(int number) where TEnum : struct, Enum => (TEnum)(object)number;
-    private static TEnum ToEnumCastGenericNoConstrains<TEnum>(int number) => (TEnum)(object)number;
 }
