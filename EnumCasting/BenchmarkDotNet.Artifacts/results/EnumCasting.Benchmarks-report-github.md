@@ -8,11 +8,9 @@ Intel Core2 Quad CPU Q9300 2.50GHz, 1 CPU, 4 logical and 4 physical cores
 
 
 ```
-| Method                        | Mean     | Error    | StdDev   | Allocated |
-|------------------------------ |---------:|---------:|---------:|----------:|
-| ToIntCast                     | 12.90 μs | 0.001 μs | 0.001 μs |         - |
-| ToIntCastGeneric              | 12.90 μs | 0.007 μs | 0.006 μs |         - |
-| ToIntCastGenericNoConstrains  | 12.90 μs | 0.001 μs | 0.001 μs |         - |
-| ToEnumCast                    | 46.64 μs | 0.085 μs | 0.079 μs |         - |
-| ToEnumCastGeneric             | 46.58 μs | 0.021 μs | 0.020 μs |         - |
-| ToEnumCastGenericNoConstrains | 46.57 μs | 0.015 μs | 0.014 μs |         - |
+| Method            | Mean     | Error    | StdDev   | Allocated |
+|------------------ |---------:|---------:|---------:|----------:|
+| ToIntCast         | 12.90 μs | 0.001 μs | 0.001 μs |         - |
+| ToIntCastGeneric  | 12.90 μs | 0.001 μs | 0.001 μs |         - |
+| ToEnumCast        | 46.58 μs | 0.008 μs | 0.007 μs |         - |
+| ToEnumCastGeneric | 46.59 μs | 0.010 μs | 0.010 μs |         - |
