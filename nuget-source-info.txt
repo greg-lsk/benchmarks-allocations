@@ -1,0 +1,3 @@
+Due to issues with dotnet restore not completing, 
+we’ve removed the v3 source (https://api.nuget.org/v3/index.json) from the NuGet source list 
+and add the v2 source (https://www.nuget.org/api/v2).
