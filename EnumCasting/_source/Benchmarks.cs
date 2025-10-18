@@ -7,13 +7,76 @@ namespace EnumCasting;
 [MemoryDiagnoser]
 public class Benchmarks
 {
-    [Benchmark]
-    public int ToIntCast() => (int)Color.Blue;
+    private int _iterations;
+    private Color _color;
+
+
+    [GlobalSetup]
+    public void Setup()
+    {
+        _iterations = 30000;
+        _color = Color.Olive;
+    }
+
 
     [Benchmark]
-    public Color ToColorCast() => (Color)0;
+    public int ToIntCast()
+    {
+        var total = 0;
+        for (int i = 0; i < _iterations; ++i) total += (int)_color;
 
+        return total;
+    }
 
-    private static int IntCast() => (int)Color.Blue;
-    private static Color EnumCast() => (Color)0;
+    [Benchmark]
+    public int ToIntCastGeneric()
+    {
+        var total = 0;
+        for (int i = 0; i < _iterations; ++i) total += ToIntCastGeneric(_color);
+
+        return total;
+    }
+
+    [Benchmark]
+    public int ToIntCastGenericNoConstrains()
+    {
+        var total = 0;
+        for (int i = 0; i < _iterations; ++i) total += ToIntCastGenericNoConstrains(_color);
+
+        return total;
+    }
+
+    [Benchmark]
+    public Color ToEnumCast()
+    {
+        var color = Color.White;
+        for (int i = 0; i < _iterations; ++i) color = (Color)(i % 2);
+
+        return color;
+    }
+
+    [Benchmark]
+    public Color ToEnumCastGeneric()
+    {
+        var color = Color.White;
+        for (int i = 0; i < _iterations; ++i) color = ToEnumCastGeneric<Color>(i % 2);
+        
+
+        return color;
+    }
+
+    [Benchmark]
+    public Color ToEnumCastGenericNoConstrains()
+    {
+        var color = Color.White;
+        for (int i = 0; i < _iterations; ++i) color = ToEnumCastGenericNoConstrains<Color>(i % 2);
+
+        return color;
+    }
+
+    private static int ToIntCastGeneric<TEnum>(TEnum e) where TEnum : struct, Enum => (int)(object)e;
+    private static int ToIntCastGenericNoConstrains<TEnum>(TEnum e) => (int)(object)e!;
+
+    private static TEnum ToEnumCastGeneric<TEnum>(int number) where TEnum : struct, Enum => (TEnum)(object)number;
+    private static TEnum ToEnumCastGenericNoConstrains<TEnum>(int number) => (TEnum)(object)number;
 }
